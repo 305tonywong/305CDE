@@ -1,0 +1,23 @@
+{
+  "name": "QuitSmoking",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tony Wong",
+  "dependencies": {
+    "ejs": "*",
+    "hapi": "^10.4.0",
+    "hapi-auth-cookie": "*",
+    "joi": "*",
+    "mongoose": "*",
+    "passport-local-mongoose": "*",
+    "vision": "*",
+    "inert":"*",
+    "nodemailer":"*",
+    "jsonfile":"*"
+
+  }
+}

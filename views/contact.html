@@ -1,0 +1,71 @@
+<html>
+<head><style>
+
+a.one:link    {color:#404D5B; background-color:transparent; text-decoration:underline}
+a.one:visited {color:pink; background-color:transparent; text-decoration:underline}
+a.one:hover   {color:red; background-color:transparent; text-decoration:underline}
+a.one:active  {color:yellow; background-color:transparent; text-decoration:underline}
+
+#map {
+    height: 400px;
+    margin: 20px 0;
+    border-radius: 5px;
+    border: 1px solid silver;
+}
+#response{align: 'center';}
+</style></head>
+<body>
+<div align="center">
+<img src="../public/image/contact.png"><br><br>
+ <u>Take Actions and Contact Us Today!</u><br><br>
+  Address: Room 1003, 10/F<br>
+  VTC Tower, 27 Wood Road,<br>
+  Wan Chai, HK<br>
+
+<br>
+     <u>Telephone</u><br><br>
+     +852 2305 2305<br><br>
+ <a href='mailto:305tonywong@gmail.com'>Email: 305tonywong@gmail.com</a>
+
+
+
+</div>
+<center>
+<div id='map' style='width:400px;height:400px;align=center;'></div>
+<style>
+#map {
+  height: 100%;
+}
+div {
+  display: table;
+  margin-right: auto;
+  margin-left: auto;
+}
+</style>
+
+<div id="response"></div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+</script>
+</center>
+</body>
+<script async defer
+src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBkjoUh0_5O07JnbTY5jR73kpCXJLjAvA4&callback=initMap'>
+</script>
+<script>
+function initMap() {
+var mapOptions = {
+center: {lat: 22.2764849, lng: 114.1752913},
+streetViewControl: false,
+scaleControl: true,
+zoom: 18,
+mapTypeId: google.maps.MapTypeId.roadmap
+}
+var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+var marker = new google.maps.Marker({
+position: {lat: 22.2764849, lng: 114.1752913},
+map: map,
+});
+}
+</script>
+</html>

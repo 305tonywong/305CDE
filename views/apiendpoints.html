@@ -1,0 +1,186 @@
+
+
+<html><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+  <body><section class="projects section">
+    <div class="section-inner col-lg-12">
+
+        <div class="content apiBox" style="background: #EEE;">
+
+          <h3 class="heading">Member Registration</h3>
+          <pre>URI       https://127.0.0.1:3000/registration
+Method	  POST
+Data	  {
+              "username": "YourUserName",
+              "email": "your@email.address",
+              "password": "YourPassword"
+          }
+Result	  {
+              "Registration": "OK"
+          }
+Error	  {
+              "Registration": "fail"
+          }
+          </pre>
+          <hr>
+
+          <h3 class="heading">Email Verification</h3>
+          <pre>URI       https://127.0.0.1:3000/verify/{vericode*}
+Method	  POST
+Data	  {
+              "username": "YourUserName",
+              "password": "YourPassword"
+          }
+Result	  {
+              "username": "YourUserName",
+              "email": "your@email.address",
+          }
+Error	  {
+              "Verification": "fail"
+          }</pre>
+          <hr>
+
+          <h3 class="heading">User login</h3>
+          <pre>
+URI       https://127.0.0.1:3000/login
+Method	  POST
+Data	  {
+              "username": "YourUserName",
+              "password": "YourPassword"
+          }
+Result	  {
+              "username": "YourUserName",
+              "email": "your@email.address",
+          }
+Error	  {
+              "login": "fail"
+          }
+          </pre>
+          <hr>
+
+          <h3 class="heading">Search Google Books (using Google Books API)</h3>
+          <pre>URI       https://127.0.0.1:3000/books or https://127.0.0.1:3000/bookssmember
+Method	  POST (client app only, server side is not needed)
+Data	  {
+            "title": "Search Your Favourite Book"
+          }
+Result	  {
+            {
+              "book_id": VYwVuDlutWcC,
+              "image": "http://books.google.com/books/content?id=VYwVuDlutWcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+              "url": "http://books.google.com.hk/books?id=VYwVuDlutWcC&dq=intitle:quit%2Bsmoking&hl=&source=gbs_api",
+              "title": "100 Questions & Answers About How to Quit Smoking",
+              "author": "Charles Herrick, Charlotte Herrick, Marianne Mitchell",
+            }
+          }
+Error	  {
+          }</pre>
+          <hr>
+
+          <h3 class="heading">Loads favourite list</h3>
+          <pre>URI       https://127.0.0.1:3000/editfavlist
+Method	  GET
+Data	  {
+          "username": "YourUserName",
+          "password": "yourPassword"
+}
+Result	[
+          {
+          "book_id": VYwVuDlutWcC,
+          "image": "http://books.google.com/books/content?id=VYwVuDlutWcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+          "url": "http://books.google.com.hk/books?id=VYwVuDlutWcC&dq=intitle:quit%2Bsmoking&hl=&source=gbs_api",
+          "title": "100 Questions & Answers About How to Quit Smoking",
+          "author": "Charles Herrick, Charlotte Herrick, Marianne Mitchell",
+          },
+          {
+            "book_id": RcRaCAAAQBAJ,
+            "image": "http://books.google.com/books/content?id=RcRaCAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "url": "http://books.google.com.hk/books?id=RcRaCAAAQBAJ&dq=intitle:quit%2Bsmoking&hl=&source=gbs_api",
+            "title": "Quit Smoking-Santa Claus Made Me Smoke: Ian Clark Helped Me Quit",
+            "author": "Ian Clark",
+          }
+]
+Error	{
+}</pre>
+          <hr>
+
+          <h3 class="heading">Add items into favourite list</h3>
+          <pre>URI       https://127.0.0.1:3000/addfavlist
+Method	  PUT
+Data	  {
+          "username": "YourUserName",
+          "add":  {
+            "book_id": RcRaCAAAQBAJ,
+            "image": "http://books.google.com/books/content?id=EeFmkVW3OP8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "url": "https://play.google.com/store/books/details?id=EeFmkVW3OP8C&source=gbs_api",
+            "title": "Quit Smoking Forever",
+            "author": "Andres Rios",
+                  }
+}
+Result	{
+          "username": "YourUserName",
+          "fav": [
+          {
+          "book_id": VYwVuDlutWcC,
+          "image": "http://books.google.com/books/content?id=VYwVuDlutWcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+          "url": "http://books.google.com.hk/books?id=VYwVuDlutWcC&dq=intitle:quit%2Bsmoking&hl=&source=gbs_api",
+          "title": "100 Questions & Answers About How to Quit Smoking",
+          "author": "Charles Herrick, Charlotte Herrick, Marianne Mitchell",
+          },
+          {
+            "book_id": RcRaCAAAQBAJ,
+            "image": "http://books.google.com/books/content?id=RcRaCAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "url": "http://books.google.com.hk/books?id=RcRaCAAAQBAJ&dq=intitle:quit%2Bsmoking&hl=&source=gbs_api",
+            "title": "Quit Smoking-Santa Claus Made Me Smoke: Ian Clark Helped Me Quit",
+            "author": "Ian Clark",
+          },
+          {
+            "book_id": RcRaCAAAQBAJ,
+            "image": "http://books.google.com/books/content?id=EeFmkVW3OP8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "url": "https://play.google.com/store/books/details?id=EeFmkVW3OP8C&source=gbs_api",
+            "title": "Quit Smoking Forever",
+            "author": "Andres Rios",
+          }
+          ]
+}
+Error	{
+              "Add": "FAIL"
+}</pre>
+          <hr>
+          <h3 class="heading">Remove items from favourite list</h3>
+          <pre>URI       https://127.0.0.1:3000/removefavlist
+Method	  PUT
+Data	  {
+          "username": "YourUserName",
+          "book_id": VYwVuDlutWcC
+}
+Result	{
+          "username": "Yourname",
+
+          "fav": [
+          {
+            "book_id": RcRaCAAAQBAJ,
+            "image": "http://books.google.com/books/content?id=RcRaCAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "url": "http://books.google.com.hk/books?id=RcRaCAAAQBAJ&dq=intitle:quit%2Bsmoking&hl=&source=gbs_api",
+            "title": "Quit Smoking-Santa Claus Made Me Smoke: Ian Clark Helped Me Quit",
+            "author": "Ian Clark",
+          },
+          {
+            "book_id": RcRaCAAAQBAJ,
+            "image": "http://books.google.com/books/content?id=EeFmkVW3OP8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "url": "https://play.google.com/store/books/details?id=EeFmkVW3OP8C&source=gbs_api",
+            "title": "Quit Smoking Forever",
+            "author": "Andres Rios",
+          }
+          ]
+}
+Error	{
+        "Add": "FAIL"
+}</pre>
+          <hr>
+
+</div><!--//section-inner-->
+</div></section></body></html>

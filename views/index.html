@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+
+<head>
+  <title>Quit Smoking Website</title>
+  <!-- Bootstrap CSS -->
+  <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="container">
+
+  <div class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" ui-sref="index">Quit Smoking Now!</a>
+      <ul class="nav">
+        <li><a ui-sref="index">Home</a></li>
+        <li><a ui-sref="whyquit">Why Quit?</a></li>
+        <li><a ui-sref="tips">Tips on Quit Smoking</a></li>
+        <li><a ui-sref="" onclick="window.open('/books', 'newwindow');return false;">Search Books about Quit Smoking</a></li>
+        <li><a ui-sref="member">MembersArea</a></li>
+        <li><a ui-sref="" onclick="window.open('/contact', 'newwindow');return false;">Contact Us</a></li>
+        <li><a ui-sref="api">API Endpoints</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span12">
+      <div class="well" ui-view="viewA"></div>
+    </div>
+  </div>
+
+  <!-- Angular -->
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js"></script>
+  <!-- UI-Router -->
+  <script src="//angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+  <script src="../public/library/app.js"></script>
+</body>
